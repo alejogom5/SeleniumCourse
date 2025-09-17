@@ -1,28 +1,22 @@
 pipeline {
-    agent any // Permite que Jenkins ejecute este Pipeline en cualquier agente disponible
-
+    agent any
+    tools {
+        maven 'mvn3'   // el nombre exacto que configuraste en Jenkins
+    }
     stages {
-        stage('Build') { // Primera etapa: Compilación
+        stage('Build') {
             steps {
-                script {
-                    sh 'mvn clean install' // Comando para construir el proyecto (si usas Maven)
-                }
+                sh 'mvn clean install'
             }
         }
-
-        stage('Test') { // Segunda etapa: Pruebas
+        stage('Test') {
             steps {
-                script {
-                    sh 'mvn test' // Comando para ejecutar las pruebas
-                }
+                sh 'mvn test'
             }
         }
-
-        stage('Deploy') { // Tercera etapa: Despliegue
+        stage('Deploy') {
             steps {
-                script {
-                    echo 'Desplegando la aplicación…' // Aquí puedes añadir comandos para el despliegue
-                }
+                echo 'Desplegando la aplicación…'
             }
         }
     }
