@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Selenium Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="tests.TestListener"></listener>
+    </listeners>
+    <test name="Test1">
+        <classes>
+            <class name="tests.HomeTest" />
+        </classes>
+    </test>
+</suite>
