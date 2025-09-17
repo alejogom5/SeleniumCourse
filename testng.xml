@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="tests.TestListener"></listener>
     </listeners>
-    <test name="Test1">
+    <test name="Test">
         <classes>
             <class name="tests.HomeTest" />
         </classes>
